@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "temp-soap-service"
+version = "0.1.0"
+description = "A Python SOAP temperature conversion service with WSDL using Spyne"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Your Name" }
+]
+license = { text = "MIT" }
+dependencies = [
+  "spyne",
+  "lxml"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+temp-soap-service = "temp_soap_service.app:run_server"
